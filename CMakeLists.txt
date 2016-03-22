@@ -47,6 +47,7 @@ add_definitions(-DTESTDATA="${PROJECT_SOURCE_DIR}/test/data")
 
 find_package(PkgConfig)
 find_package(Qt5Widgets REQUIRED)
+find_package(GTest REQUIRED)
 
 find_program(LUPDATE lupdate)
 if (NOT LUPDATE)
@@ -101,6 +102,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/src/view
     ${CHEWING_INCLUDE_DIRS}
     ${Qt5Widgets_INCLUDES}
+    ${GTEST_INCLUDE_DIRS}
 )
 
 # i18n
@@ -233,8 +235,7 @@ add_executable(run-test
     ${run-test_src}
 )
 target_link_libraries(run-test
-    gtest
-    gtest_main
+    ${GTEST_BOTH_LIBRARIES}
 
     exporter
     importer

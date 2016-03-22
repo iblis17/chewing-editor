@@ -27,7 +27,7 @@ before_install:
 
     # building libgtest on ubuntu
     # ref: https://github.com/travis-ci/travis-ci/issues/1294
-    - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+    # - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
 
 script:
     - cmake $OPTION .
